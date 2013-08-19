@@ -1,1 +1,215 @@
-tags.php
+/* CSS Document */
+
+body {
+	background-color:#f3f3f3;
+	font-family: "Lucida Grande","Lucida Sans Unicode",geneva,verdana,sans-serif;
+	font-size:100%;
+	color:#777;
+}
+a {
+	color:#A85BA6;
+	text-decoration:none;
+}
+a:hover {
+	color:#551f6d;
+	text-decoration: underline;
+}
+label {
+	display:block;
+}
+
+.connecter input[type='text']  {
+	width: 98%;
+}
+.connecter input[type='submit'] {
+	margin-top: 10px;
+	float: right;
+}
+
+fieldset {
+	border:1px solid #eee;
+}
+.add-edit input[type='text'], textarea {
+	width: 100%;
+	margin-bottom: 20px;
+}
+textarea {
+	width: 99.5%;
+	margin-bottom: 20px;
+}
+.add-edit input[type='submit'] {
+	margin-top: 10px;
+	float: right;
+}
+.clear{
+	clear: both;
+}
+#container {
+	width:1024px;
+	margin:0px auto;
+	background: #fff;
+}
+
+#header {
+	background-color:#eeeeee;
+	margin:10px;
+	padding:30px 10px 30px 10px;
+	border-top:2px solid #ccc;
+}
+
+#header h1 {
+	text-align:center;
+	font-family:Trebuchet MS, Geneva, Arial, Helvetica, sans-serif;
+	font-size:200%;
+	color:#333;
+	margin:0;
+	font-weight:normal;
+}
+#header h1 strong {
+	color:#A85BA6;
+}
+#header h1 a {
+	color:#333;
+	text-decoration:none;
+}
+#header h2 {
+	font-size:110%;
+	font-weight:normal;
+	text-align:center;
+	color:#999;
+}
+#header ul {
+	margin:20px 0 0 0;
+	padding:0;
+}
+#header li {
+	margin:0;
+	padding:0;
+	list-style:none;
+	float:left;
+}
+#header li a {
+	display:block;
+	color:#999;
+	text-decoration:none;
+	margin:0 10px 0 0;
+	font-size:100%;
+}
+#header li a:hover {
+	color:#000;
+}
+#sidebar {
+	float:right;
+	width:250px;
+	margin:10px;
+}
+
+#sidebar h3 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:100%;
+	color:#000;
+	margin:20px 10px 10px 10px;
+}
+
+ul.submenu {
+	margin:0;
+	padding:0;
+}
+.submenu li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.submenu a {
+	display:block;
+	height:13px;
+	padding:7px 7px 7px 17px;
+	margin:1px 0 0 0;
+
+}
+#content {
+	margin:10px 280px 10px 10px;
+}
+#content h1 {
+	font-family:Trebuchet MS, Geneva, Arial, Helvetica, sans-serif;
+	font-size:180%;
+	border-bottom:1px solid #eee;
+	padding:5px;
+}
+#content h1 a {
+	color:#000;
+	text-decoration:none;
+}
+#content h1 .edit {
+	color:red;
+	font-size:70%;
+	}
+#content h1 a:hover {
+	color:#444;
+}
+#content h1:hover {
+	border-bottom:1px solid #666;
+}
+#content h2 {
+	font-size:150%;
+	color:#ccc;
+	margin:10px 0 10px 0;
+	padding:5px;
+}
+#content p {
+	padding:5px;
+	line-height:24px;
+
+}
+#content .meta {
+	background: #eee;
+	font-size: 90%;
+	padding:5px;
+	margin:10px 0 20px 0;
+	border-top:1px solid #eee;
+}
+#content .meta span {
+	
+	color: #000;
+}
+#content .meta a {
+
+}
+
+#content ul {
+
+}
+#content li {
+	padding:0 0 5px 5px;
+	
+	color:#999;
+}
+
+.comnum {
+	float:right;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:25px;
+	color:#ccc;
+}
+
+#footer {
+	background-color:#eee;
+	border-top:2px solid #ccc;
+	padding:10px;
+	text-align:center;
+}
+
+/*
+.comment_odd {
+	background-color:#f6f6f6;
+	padding:10px;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #eee;
+}
+.comment_even {
+	padding:10px;
+	background-color:#fcfcfc;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #eee;
+}
+*/
