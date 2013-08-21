@@ -32,20 +32,20 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `id_article` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(245) NOT NULL,
   `contenu` text NOT NULL,
-  `code_usager` varchar(45) NOT NULL,
+  `id_usager` int(11) NOT NULL,
   PRIMARY KEY (`id_article`),
-  KEY `code_usager` (`code_usager`)
+  KEY `id_usager` (`id_usager`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `articles`
 --
 
-INSERT INTO `articles` (`id_article`, `titre`, `contenu`, `code_usager`) VALUES
-(1, 'Article 1', 'Contenu de l''Article 1', 'guillaume'),
-(2, 'Article 2', 'Contenu de l''Article 2', 'louis'),
-(3, 'Article 3', 'Contenu de l''Article 3', 'valeriu'),
-(4, 'Article 4', 'Contenu de l''Article 4', 'valeriu');
+INSERT INTO `articles` (`id_article`, `titre`, `contenu`, `id_usager`) VALUES
+(1, 'Article 1', 'Contenu de l''Article 1', 1),
+(2, 'Article 2', 'Contenu de l''Article 2', 2),
+(3, 'Article 3', 'Contenu de l''Article 3', 3),
+(4, 'Article 4', 'Contenu de l''Article 4', 3);
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ INSERT INTO `articles_mots_cle` (`id_article`, `id_mot_cle`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `mots_cle` (
-  `id_mot_cle` int(11) NOT NULL AUTO_INCREMENT,
+  `id_mot_cle` int(11) NOT NULL,
   `mot_cle` varchar(245) NOT NULL,
   PRIMARY KEY (`id_mot_cle`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
@@ -98,22 +98,23 @@ INSERT INTO `mots_cle` (`id_mot_cle`, `mot_cle`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usagers` (
-  `code_usager` varchar(45) NOT NULL,
+  `id_usager` int(11) NOT NULL AUTO_INCREMENT,
+  `code_usager` varchar(45) NOT NULL UNIQUE,
   `mot_de_passe` varchar(32) NOT NULL,
   `nom` varchar(45) NOT NULL,
   `prenom` varchar(45) NOT NULL,
   `courriel` varchar(45) NOT NULL,
-  PRIMARY KEY (`code_usager`)
+  PRIMARY KEY (`id_usager`,`code_usager`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `usagers`
 --
 
-INSERT INTO `usagers` (`code_usager`, `mot_de_passe`, `nom`, `prenom`, `courriel`) VALUES
-('guillaume', '0937d6b529933d0ef59ce458668013b9', 'Harvey', 'Guillaume', 'guillaume@courriel.com'),
-('louis', '777cadc280bb23ebea268ded98338c39', 'Cyr', 'Louis', 'louis@courriel.com'),
-('valeriu', '92aad5242167295cde90f76ea947e12c', 'Tihai', 'Valeriu', 'valeriu@courriel.com');
+INSERT INTO `usagers` (`id_usager`, `code_usager`, `mot_de_passe`, `nom`, `prenom`, `courriel`) VALUES
+(1, 'guillaume', '0937d6b529933d0ef59ce458668013b9', 'Harvey', 'Guillaume', 'guillaume@courriel.com'),
+(2, 'louis', '777cadc280bb23ebea268ded98338c39', 'Cyr', 'Louis', 'louis@courriel.com'),
+(3, 'valeriu', '92aad5242167295cde90f76ea947e12c', 'Tihai', 'Valeriu', 'valeriu@courriel.com');
 
 --
 -- Contraintes pour les tables exportées
@@ -123,7 +124,7 @@ INSERT INTO `usagers` (`code_usager`, `mot_de_passe`, `nom`, `prenom`, `courriel
 -- Contraintes pour la table `articles`
 --
 ALTER TABLE `articles`
-  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`code_usager`) REFERENCES `usagers` (`code_usager`);
+  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`id_usager`) REFERENCES `usagers` (`id_usager`);
 
 --
 -- Contraintes pour la table `articles_mots_cle`
