@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Mini Blog</title>
+	<title><?php echo afficher_titre(); ?></title>
 	<meta charset="UTF-8" />
 <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
 </head>
