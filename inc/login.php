@@ -1,8 +1,8 @@
 <div id="sidebar">
 <h3>Connecter</h3>
-	
-		<div class="message erreur">Accusamus, expedita!</div>
-		<div class="message succes">Perspiciatis animi!</div>
+
+	<div class="message erreur">Accusamus, expedita!</div>
+	<div class="message succes">Perspiciatis animi!</div>
 
 		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="connecter">
 			<fieldset>
