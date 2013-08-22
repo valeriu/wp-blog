@@ -1,6 +1,6 @@
 <div id="sidebar">
 <h3>Connecter</h3>
-		<form action="" method="POST" class="connecter">
+		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="connecter">
 			<fieldset>
 				<label for="utilisateur">Utilisateur</label>
 				<input type="text" name="user" id="utilisateur">
