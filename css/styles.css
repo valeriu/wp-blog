@@ -213,3 +213,18 @@ ul.submenu {
 	border-bottom:1px solid #eee;
 }
 */
+.message {
+	border: 1px solid #eee;
+	margin: 10px 0px;
+	padding:15px;
+}
+
+.succes {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+}
+
+.erreur {
+	color: #D8000C;
+	background-color: #FFBABA;
+}

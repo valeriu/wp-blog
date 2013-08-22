@@ -16,6 +16,10 @@
 
 	<div class="add-edit">
 		<h1>Ajouter ou Modifier</h1>
+
+		<div class="message erreur">Accusamus, expedita error dolore ipsam natus doloribus!</div>
+		<div class="message succes">Perspiciatis animi consectetur impedit ab totam reiciendis!</div>
+
 		<form action="">
 			<fieldset>
 				<label for="titre">Titre</label>
