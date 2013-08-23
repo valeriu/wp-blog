@@ -22,10 +22,10 @@
 	}
 	
 
-	$conectBD = mysqli_connect($hostBD,$userBD,$passBD,$nameBD);
+	$connectBD = mysqli_connect($hostBD,$userBD,$passBD,$nameBD);
 	// Check connection
-	if (mysqli_connect_errno($conectBD))	{
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	if (mysqli_connect_errno($connectBD))	{
+		echo "Erreur de connection avec MySQL: " . mysqli_connect_error();
 		exit();
 	}
 
