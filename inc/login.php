@@ -1,10 +1,13 @@
 <div id="sidebar">
 <h3>Connecter</h3>
-
-	<div class="message erreur">Accusamus, expedita!</div>
+<?php
+	$x = 1;
+	echo $x;
+?>	
+<!-- 	<div class="message erreur">Accusamus, expedita!</div>
 	<div class="message succes">Perspiciatis animi!</div>
-
-		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="connecter">
+ -->	
+		<form action="" method="POST" class="connecter">
 			<fieldset>
 				<label for="code_usager">Code usager</label>
 				<input type="text" name="code_usager" id="code_usager">
@@ -41,18 +44,20 @@
 			$rangee = mysqli_fetch_assoc($resultats);
 			if($rangee)
 			{
-				afficherMessage("Bonjour " . $rangee["prenom"],false);
+				$erreur = false;
+				$message = "Bonjour " . $rangee["prenom"];
+				echo "Bonjour " . $rangee["prenom"];
+				$x = 2;
 			}
 			else
 			{
-				afficherMessage("Mauvaise combinaison Utilisateur et Mot de passe",true);
+				echo "Mauvaise combinaison Utilisateur et Mot de passe";
+				$message = "Mauvaise combinaison Utilisateur et Mot de passe";
+
 			}
 		}
 		else
-			afficherMessage("Erreur de requête SQL",true);
-	}
-	else
-	{
-		afficherMessage("Vous devez inscrire le code mot de passe",true);
+			echo "Erreur de requête SQL";
+			$message = "Erreur de requête SQL";
 	}
 ?>		
