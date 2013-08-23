@@ -1,6 +1,6 @@
 <?php
 	
-	$user = "valeriu";
+	$user = "louis";
 
 	if ($user === "valeriu") {
 		$hostBD = "localhost";
@@ -10,9 +10,9 @@
 	} 
 	else if ($user === "louis") {
 		$hostBD = "localhost";
-		$nameBD = "directory";
+		$nameBD = "blog";
 		$userBD = "root";
-		$passBD = "";
+		$passBD = "chezmoi";
 	} else {
 		//cegep
 		$hostBD = "localhost";
