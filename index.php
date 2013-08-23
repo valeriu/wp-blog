@@ -14,7 +14,7 @@
 <div>
 	<div id="content">
 <div class="post">
-	<h1><a href="#edit" class="edit">[edit]</a> <a href="post.php">Introduction</a></h1> 
+	<h1><a href="add_edit.php?article=modifier" class="edit">[edit]</a> <a href="post.php">Introduction</a></h1> 
 
 	<div class="text">
 		<p> Hello and welcome to miniBLOG! This is just a simple, small template designed specifically for the blog obsessives. Regarding colours, I've left everything very plain using mainly greys. These colours are all easily changed via the stylesheet. The backgorund image can be changed easily too by opening it in a graphics program and adjusting the hue/saturation. Got something to say? Say it with miniBLOG! </p>
