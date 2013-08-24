@@ -1,45 +1,29 @@
 <div id="sidebar">
-<h3>Connecter</h3>
 <?php
-
-	if (isset($_SESSION["code_usager"]))
+	if (isset($_SESSION["msg_erreur"]))
 	{
-		if (isset($_SESSION["msg_erreur"]) && isset($_SESSION["code_usager"]))
-		{
-			echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
-		}
-		else if (isset($_SESSION["msg_succes"]))
-		{
-			echo '<div class="message succes">' . $_SESSION["msg_succes"]. '</div>';
-		}
-		echo "<form method='POST' class='connecter' action='inc/gestionLogout.php'>";
+		echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
+	}
+	if (isset($_SESSION["utilisateur"]))
+	{
+		echo '<h3>' . $_SESSION["bonjour"] . '</h3>';
+		echo '<ul class="submenu">';
+		echo '<li><a href="add_edit.php">Ajouter billet de blog</a></li>';
+		echo '<li><a href="index.php">Voir les billets de blog</a></li>';
+		echo '<li><a href="inc/gestionLoginLogout.php?logout=true">Déconnexion</a></li>';
+		echo '</ul>';
 	}
 	else
 	{
-		echo '<div class="message succes">Veuillez vous connecter</div>';
-		echo "<form method='POST' class='connecter' action='inc/gestionLogin.php'>";
+		echo '<h3>Connecter</h3>';
+		echo "<form action='inc/gestionLoginLogout.php' method='POST' class='connecter'>";
+		echo "<fieldset>";
+		echo '<label for="utilisateur">Utilisateur</label>';
+		echo '<input type="text" name="utilisateur" id="utilisateur">';
+		echo '<label for="motpasse">Mot de passe</label>';
+		echo '<input type="text" name="motpasse" id="motpasse">';
+		echo '<input type="submit" value="S\'identifier">';
+		echo '</fieldset>';
+		echo '</form>';
 	}
-
-?>	
-		<form method="POST" class="connecter">
-			<fieldset>
-				<label for="code_usager">Code usager</label>
-				<input type="text" name="code_usager" id="code_usager">
-				<label for="mot_de_passe">Mot de passe</label>
-				<input type="password" name="mot_de_passe" id="mot_de_passe"><br/>
-<?php
-	if (isset($_SESSION["code_usager"]))
-	{
-		echo "<input type='submit' value='Se déconnecter'>";
-	}
-	else
-	{
-		echo "<input type='submit' value='Se connecter'>";
-	}
-?>	
-			</fieldset>
-		</form>
-		<ul class="submenu">
-			<li><a href="add_edit.php">Ajouter billet de blog</a></li>
-			<li><a href="index.php">Voir les billets de blog</a></li>
-		</ul>
+?>
