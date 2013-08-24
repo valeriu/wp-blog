@@ -1,22 +1,23 @@
 <?php
 	session_start();
-	unset($_SESSION["msg_erreur"]);
+	unset($_SESSION["msg_erreur_side_bar"]);
 
 	if (isset($_GET["logout"]))
 	{
-  		//détruire les variables session utilisateur
+  		//dÃ©truire les variables session utilisateur
 		unset($_SESSION["utilisateur"]);
+		unset($_SESSION["msg_erreur_side_bar"]);
 		unset($_SESSION["msg_erreur"]);
 		unset($_SESSION["bonjour"]);
 
-		//détruire la session de l'usager 
+		//dÃ©truire la session de l'usager 
 		session_destroy();
 	}	
 	else
 	{
 		include "bd.php";
 
-		//envoi de la requête
+		//envoi de la requÃªte
 		$requete = "SELECT * from usagers where code_usager = '" 
 					. mysqli_real_escape_string($connectBD, $_POST["utilisateur"]) 
 					. "' and mot_de_passe = '" 
@@ -35,12 +36,12 @@
 			}
 			else
 			{
-				$_SESSION["msg_erreur"] = "Mauvaise combinaison Utilisateur et Mot de passe";
+				$_SESSION["msg_erreur_side_bar"] = "Mauvaise combinaison Utilisateur et Mot de passe";
 			}
 		}
 		else
 		{
-			$_SESSION["msg_erreur"] = "Erreur de requête SQL";
+			$_SESSION["msg_erreur_side_bar"] = "Erreur de requÃªte SQL";
 		}
 	}
     header('Location: ../index.php');
