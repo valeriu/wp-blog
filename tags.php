@@ -16,28 +16,16 @@
 
 	<div class="tag-clouds">
 		<h1>Tag Clouds</h1>
-		
+<?php 	
+	if (isset($_SESSION["msg_erreur"]))
+	{
+		echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
+	}
+?>
 		<ul>
-			<li>(21) <a href="">Tag tagulet</a></li>
-			<li>(20) <a href="">Tag tagulet</a></li>
-			<li>(19) <a href="">Tag tagulet</a></li>
-			<li>(18) <a href="">Tag tagulet</a></li>
-			<li>(17) <a href="">Tag tagulet</a></li>
-			<li>(16) <a href="">Tag tagulet</a></li>
-			<li>(15) <a href="">Tag tagulet</a></li>
-			<li>(14) <a href="">Tag tagulet</a></li>
-			<li>(13) <a href="">Tag tagulet</a></li>
-			<li>(12) <a href="">Tag tagulet</a></li>
-			<li>(11) <a href="">Tag tagulet</a></li>
-			<li>(10) <a href="">Tag tagulet</a></li>
-			<li>(9) <a href="">Tag tagulet</a></li>
-			<li>(8) <a href="">Tag tagulet</a></li>
-			<li>(7) <a href="">Tag tagulet</a></li>
-			<li>(6) <a href="">Tag tagulet</a></li>
-			<li>(5) <a href="">Tag tagulet</a></li>
-			<li>(4) <a href="">Tag tagulet</a></li>
-			<li>(3) <a href="">Tag tagulet</a></li>
-			<li>(2) <a href="">Tag tagulet</a></li>
+<?php 	
+	include "inc/afficherMotsCle.php";
+?>
 		</ul>
 
 	</div>

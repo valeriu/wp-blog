@@ -1,8 +1,8 @@
 <div id="sidebar">
 <?php
-	if (isset($_SESSION["msg_erreur"]))
+	if (isset($_SESSION["msg_erreur_side_bar"]))
 	{
-		echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
+		echo '<div class="message erreur">' . $_SESSION["msg_erreur_side_bar"] . '</div>';
 	}
 	if (isset($_SESSION["utilisateur"]))
 	{
