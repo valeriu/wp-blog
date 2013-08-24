@@ -1,6 +1,6 @@
 <?php 	
 	include "inc/sessions.php";
-	include "inc/bd.php";
+	// include "inc/bd.php";
 	include "inc/library.php";
 	include "inc/head.php";
 ?>
