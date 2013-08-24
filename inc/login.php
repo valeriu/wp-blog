@@ -1,21 +1,22 @@
 <div id="sidebar">
 <h3>Connecter</h3>
 <?php
-	if (isset($_SESSION["msg_erreur"]))
-	{
-		echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
-	}
-	else if (isset($_SESSION["msg_succes"]))
-	{
-		echo '<div class="message succes">' . $_SESSION["msg_succes"]. '</div>';
-	}
 
 	if (isset($_SESSION["code_usager"]))
 	{
+		if (isset($_SESSION["msg_erreur"]) && isset($_SESSION["code_usager"]))
+		{
+			echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
+		}
+		else if (isset($_SESSION["msg_succes"]))
+		{
+			echo '<div class="message succes">' . $_SESSION["msg_succes"]. '</div>';
+		}
 		echo "<form method='POST' class='connecter' action='inc/gestionLogout.php'>";
 	}
 	else
 	{
+		echo '<div class="message succes">Veuillez vous connecter</div>';
 		echo "<form method='POST' class='connecter' action='inc/gestionLogin.php'>";
 	}
 
