@@ -3,15 +3,31 @@ unset($_SESSION["msg_erreur"]);
 
 include "bd.php";
 
-$requete = "SELECT *
-			FROM articles AR
-			INNER JOIN usagers US
-			ON AR.id_usager = US.id_usager
-			INNER JOIN articles_mots_cle AM
-			ON AR.id_article = AM.id_article
-			INNER JOIN mots_cle MC
-			ON AM.id_mot_cle = MC.id_mot_cle
-			ORDER BY AR.id_article, MC.id_mot_cle";
+if (isset($_GET["motCle"]))
+{
+	$motCle = $_GET["motCle"];
+	$requete = "SELECT *
+				FROM articles AR
+				INNER JOIN usagers US
+				ON AR.id_usager = US.id_usager
+				INNER JOIN articles_mots_cle AM
+				ON AR.id_article = AM.id_article
+				INNER JOIN mots_cle MC
+				ON  (AM.id_mot_cle = MC.id_mot_cle AND AM.id_mot_cle = $motCle)   
+				ORDER BY AR.id_article, MC.id_mot_cle";
+}
+else
+{
+	$requete = "SELECT *
+				FROM articles AR
+				INNER JOIN usagers US
+				ON AR.id_usager = US.id_usager
+				INNER JOIN articles_mots_cle AM
+				ON AR.id_article = AM.id_article
+				INNER JOIN mots_cle MC
+				ON AM.id_mot_cle = MC.id_mot_cle
+				ORDER BY AR.id_article, MC.id_mot_cle";
+}
 
 $resultats = mysqli_query($connectBD, $requete);
 
@@ -42,11 +58,11 @@ if ($resultats)
 			echo '</div>';
 			echo '<div class="meta">';
 			echo '<span>Posted by :</span> <a href="#">' . $rangee["code_usager"] . '</a> <br>';
-			echo '<span>Les mots-clés : </span><a href="">' . $rangee["mot_cle"] . '</a>';
+			echo '<span>Les mots-clés : </span><a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 		}
 		else
 		{
-			echo ', <a href="">' . $rangee["mot_cle"] . '</a>';
+			echo ', <a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 		}
 	}
 	if ($dernierArticleLu != "")
