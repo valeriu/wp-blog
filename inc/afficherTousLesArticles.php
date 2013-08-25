@@ -16,6 +16,19 @@ if (isset($_GET["motCle"]))
 				ON  (AM.id_mot_cle = MC.id_mot_cle AND AM.id_mot_cle = $motCle)   
 				ORDER BY AR.id_article, MC.id_mot_cle";
 }
+else if (isset($_GET["utilisateur"]))
+{
+	$utilisateur = $_GET["utilisateur"];
+	$requete = "SELECT *
+				FROM articles AR
+				INNER JOIN usagers US
+				ON (AR.id_usager = US.id_usager AND AR.id_usager = $utilisateur) 
+				INNER JOIN articles_mots_cle AM
+				ON AR.id_article = AM.id_article
+				INNER JOIN mots_cle MC
+				ON  AM.id_mot_cle = MC.id_mot_cle   
+				ORDER BY AR.id_article, MC.id_mot_cle";
+}
 else
 {
 	$requete = "SELECT *
@@ -57,7 +70,7 @@ if ($resultats)
 			echo '<p>' . $rangee["contenu"] . '</p>';
 			echo '</div>';
 			echo '<div class="meta">';
-			echo '<span>Posted by :</span> <a href="#">' . $rangee["code_usager"] . '</a> <br>';
+			echo '<span>Posted by :</span> <a href="index.php?utilisateur=' . $rangee["id_usager"] . '">' . $rangee["code_usager"] . '</a> <br>';
 			echo '<span>Les mots-clés : </span><a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 		}
 		else
