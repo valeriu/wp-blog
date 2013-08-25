@@ -9,7 +9,7 @@
 		unset($_SESSION["msg_erreur_side_bar"]);
 		unset($_SESSION["msg_erreur"]);
 		unset($_SESSION["bonjour"]);
-		unset($_SESSION["auteur"]);
+		unset($_SESSION["utilisateurConnexionPrenomNom"]);
 
 		//détruire la session de l'usager 
 		session_destroy();
@@ -32,9 +32,9 @@
 
 			if ($rangee)
 			{
-				$_SESSION["utilisateur"] = $_POST["utilisateur"];
+				$_SESSION["utilisateur"] = $rangee["id_usager"];
 				$_SESSION["bonjour"] = "Bonjour, " . $rangee["nom"] . " " . $rangee["prenom"];
-				$_SESSION["auteur"] = $rangee["prenom"] . " " . $rangee["nom"];
+				$_SESSION["utilisateurConnexionPrenomNom"] = $rangee["prenom"] . " " . $rangee["nom"];
 			}
 			else
 			{

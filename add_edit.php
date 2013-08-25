@@ -29,7 +29,7 @@
 				<textarea name="texte" id="texte"  rows="10"></textarea>
 
 				<label for="auteur">Auteur</label>
-				<input type="text" name="auteur" id="auteur" disabled="disabled" value="<?php echo $_SESSION["auteur"] ?>">
+				<input type="text" name="auteur" id="auteur" disabled="disabled" value="<?php echo $_SESSION["utilisateurConnexionPrenomNom"] ?>">
 
 				<label for="motscles">Mots clés</label>
 				<input type="text" name="motscles" id="motscles">
