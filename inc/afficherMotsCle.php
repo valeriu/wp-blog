@@ -1,5 +1,5 @@
 <?php
-unset($_SESSION["msg_erreur_side_bar"]);
+unset($_SESSION["msg_erreur"]);
 
 include "bd.php";
 
