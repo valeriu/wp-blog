@@ -13,7 +13,7 @@
 ?>
 <div>
 	<div id="content">
-<?php 	
+<?php
 	include "inc/afficherTousLesArticles.php";
 ?>
 	</div> <!-- fin div content -->
