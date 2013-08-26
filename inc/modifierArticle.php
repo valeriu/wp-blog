@@ -53,10 +53,11 @@
 			}
         }
         // Detruire les mots clé qui ont été enlevé
-		$present = false;
-		$motCleADetruire = "";
+		$motsCleADetruire = "";
+
 		foreach($tabMotsCleAvant as $motAvant)
 		{
+			$present = false;
 			foreach($tabMotsCle as $mot)
 			{
 				if ($motAvant == $mot)
@@ -67,33 +68,37 @@
 			}
 			if (!$present)
 			{
-				if ($motCleADetruire == "")
+				if ($motsCleADetruire == "")
 				{
-					$motCleADetruire = $motAvant;
+					$motsCleADetruire = $motAvant;
 				}
 				else
 				{
-					$motCleADetruire = $motCleADetruire . "," . $motAvant;
+					$motsCleADetruire = $motsCleADetruire . "&" . $motAvant;
 				}
 
 			} 
 		}
 		// on détruit l'article et le mot clé
-		// on le mot clé s'il n'est plus utilisé
-		if ($motCleADetruire != "")
+		// ou le mot clé s'il n'est plus utilisé
+		if ($motsCleADetruire != "")
 		{
-			// récupérer le id_mot_cle du mot_cle
-			$requete = 'SELECT * FROM mots_cle WHERE mot_cle = "' . $motCleADetruire . '"';
-			$resultats = mysqli_query($connectBD, $requete);
-			$rangee = mysqli_fetch_assoc($resultats);
+			$tabMotsCleADetruire = explode("&", $motsCleADetruire);
+			foreach($tabMotsCleADetruire as $motADetruire)
+			{
+				// récupérer le id_mot_cle du mot_cle
+				$requete = 'SELECT * FROM mots_cle WHERE mot_cle = "' . $motADetruire . '"';
+				$resultats = mysqli_query($connectBD, $requete);
+				$rangee = mysqli_fetch_assoc($resultats);
 
-			$requete = "DELETE FROM articles_mots_cle 
-						WHERE  id_article = " . $id_article . 
-						" AND id_mot_cle = " . $rangee["id_mot_cle"];
-			mysqli_query($connectBD, $requete);
-			$requete = "DELETE FROM mots_cle 
-						WHERE  id_mot_cle = " . $rangee["id_mot_cle"];
-			mysqli_query($connectBD, $requete);
+				$requete = "DELETE FROM articles_mots_cle 
+							WHERE  id_article = " . $id_article . 
+							" AND id_mot_cle = " . $rangee["id_mot_cle"];
+				mysqli_query($connectBD, $requete);
+				$requete = "DELETE FROM mots_cle 
+							WHERE  id_mot_cle = " . $rangee["id_mot_cle"];
+				mysqli_query($connectBD, $requete);
+			}
 		}
 	}
 
