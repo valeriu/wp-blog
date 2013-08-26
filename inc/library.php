@@ -20,9 +20,7 @@ function afficher_titre() {
 			$titre = "Ajouter billet de blog";
 		}
 	} 
-	elseif ($file_name == "post") {
-		$titre = "Post titre";
-	} else {
+	else {
 		$titre = "Blog";
 	}
 	return $titre; 

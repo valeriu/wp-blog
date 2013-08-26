@@ -1,11 +1,11 @@
 <?php
 	
-	$user = "louis";
+	$user = "valeriu";
 
 	if ($user === "valeriu") 
 	{
 		$hostBD = "localhost";
-		$nameBD = "directory";
+		$nameBD = "blog";
 		$userBD = "root";
 		$passBD = "";
 	} 
@@ -25,6 +25,7 @@
 	}
 	
 	$connectBD = mysqli_connect($hostBD,$userBD,$passBD,$nameBD);
+	
 	// Check connection
 	if (mysqli_connect_errno($connectBD))	
 	{
