@@ -7,7 +7,7 @@
 	{
 		$motCle = $_GET["motCle"];
 		$requete = 'SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
-       				US.code_usager, US.nom, US.prenom, AM.id_article, AM.id_mot_cle, MC.mot_cle
+       				US.code_usager, US.nom, US.prenom, AM.id_mot_cle, MC.mot_cle
 					FROM articles AR
 					INNER JOIN usagers US
 					ON AR.id_usager = US.id_usager
@@ -27,7 +27,7 @@
 	{
 		$utilisateur = $_GET["utilisateur"];
 		$requete = "SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
-       				US.code_usager, US.nom, US.prenom, AM.id_article, AM.id_mot_cle, MC.mot_cle
+       				US.code_usager, US.nom, US.prenom, AM.id_mot_cle, MC.mot_cle
 					FROM articles AR
 					INNER JOIN usagers US
 					ON (AR.id_usager = US.id_usager AND AR.id_usager = $utilisateur) 
@@ -40,7 +40,7 @@
 	else
 	{
 		$requete = "SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
-       				US.code_usager, US.nom, US.prenom, AM.id_article, AM.id_mot_cle, MC.mot_cle
+       				US.code_usager, US.nom, US.prenom, AM.id_mot_cle, MC.mot_cle
 					FROM articles AR
 					INNER JOIN usagers US
 					ON AR.id_usager = US.id_usager
@@ -87,7 +87,7 @@
 			}
 			else
 			{
-				echo ', <a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
+				echo '&<a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 			}
 		}
 
