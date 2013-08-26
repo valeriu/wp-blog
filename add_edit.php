@@ -55,6 +55,7 @@
 	<div id="content">
 
 	<div class="add-edit">
+<<<<<<< HEAD
 		<h1>Ajouter</h1>
 
 		<form action="" method="POST">
@@ -81,6 +82,11 @@ echo $addArticle."<br>";
 echo $addMotsCle;
 //var_dump($motscles);
  ?>
+=======
+<?php
+	include "inc/afficherUnArticle.php";
+?>
+>>>>>>> louis
 	</div>
 
 

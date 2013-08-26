@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include "sessions.php"; 
 	unset($_SESSION["msg_erreur_side_bar"]);
 
 	if (isset($_GET["logout"]))
@@ -16,7 +16,6 @@
 	else
 	{
 		include "bd.php";
-
 		//envoi de la requête
 		$requete = "SELECT * from usagers where code_usager = '" 
 					. mysqli_real_escape_string($connectBD, $_POST["utilisateur"]) 

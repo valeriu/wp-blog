@@ -16,10 +16,10 @@
 <?php
 	include "inc/afficherTousLesArticles.php";
 ?>
-	</div> <!-- fin div content -->
+	</div>
 	<div class="clear"></div>
 </div>
 <?php include "inc/footer.php"; ?>
-</div> <!-- fin div container -->
+</div>
 </body>
 </html>
