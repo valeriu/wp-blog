@@ -1,10 +1,11 @@
 <?php
+
 	$user = "louis";
 
 	if ($user === "valeriu") 
 	{
 		$hostBD = "localhost";
-		$nameBD = "directory";
+		$nameBD = "blog";
 		$userBD = "root";
 		$passBD = "";
 	} 
@@ -14,7 +15,8 @@
 		$nameBD = "blog";
 		$userBD = "root";
 		$passBD = "chezmoi";
-	} else 
+	} 
+	else 
 	{
 		//cegep
 		$hostBD = "localhost";
@@ -24,6 +26,7 @@
 	}
 	
 	$connectBD = mysqli_connect($hostBD,$userBD,$passBD,$nameBD);
+	
 	// Check connection
 	if (mysqli_connect_errno($connectBD))	
 	{

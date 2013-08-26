@@ -6,7 +6,7 @@
 	}
 	if (isset($_SESSION["utilisateur"]))
 	{
-		echo '<h3>' . $_SESSION["bonjour"] . '</h3>';
+		echo '<h3>Salut, ' . $_SESSION["PrenomNom"] . '</h3>';
 		echo '<ul class="submenu">';
 		echo '<li><a href="add_edit.php">Ajouter billet de blog</a></li>';
 		echo '<li><a href="index.php">Voir les billets de blog</a></li>';
