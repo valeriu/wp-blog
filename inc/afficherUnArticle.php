@@ -4,14 +4,16 @@
 	unset($_SESSION["msg_erreur"]);
 
 	$article = $_GET["article"];
-	$requete = "SELECT *
+	$requete = "SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
+       				US.code_usager, US.nom, US.prenom, AM.id_mot_cle, MC.mot_cle
 				FROM articles AR
 				INNER JOIN usagers US
 				ON AR.id_usager = US.id_usager
-				INNER JOIN articles_mots_cle AM
-				ON (AR.id_article = AM.id_article AND AR.id_article = $article)
-				INNER JOIN mots_cle MC
-				ON  AM.id_mot_cle = MC.id_mot_cle   
+				LEFT OUTER JOIN articles_mots_cle AM
+				ON AR.id_article = AM.id_article
+				LEFT OUTER JOIN mots_cle MC
+				ON AM.id_mot_cle = MC.id_mot_cle   
+				WHERE AR.id_article = $article
 				ORDER BY AR.id_article, MC.id_mot_cle";
 
 	$resultats = mysqli_query($connectBD, $requete);
@@ -26,7 +28,7 @@
 
 				if ($nbMots > 1)
 				{
-					$motsCle = $motsCle . ',' . $rangee["mot_cle"];
+					$motsCle = $motsCle . '&' . $rangee["mot_cle"];
 				}
 				else
 				{

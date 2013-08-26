@@ -5,9 +5,9 @@
 	$texte = mysqli_real_escape_string($connectBD, $_POST["texte"]);
 	$id_article = $_POST["id_article"]; 
 	$motsCle = trim($_POST["motscle"]); 
-	$tabMotsCle = explode(",", $motsCle);
+	$tabMotsCle = explode("&", $motsCle);
 	$motsCleAvantMAJ = trim($_POST["motsCleAvantMAJ"]); 
-	$tabMotsCleAvant = explode(",", $motsCleAvantMAJ);
+	$tabMotsCleAvant = explode("&", $motsCleAvantMAJ);
 
 	// les mots clé ont changées par rapport à avant
 	if ($motsCle != $motsCleAvantMAJ)
