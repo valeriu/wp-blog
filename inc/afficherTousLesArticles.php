@@ -6,7 +6,8 @@
 	if (isset($_GET["motCle"]))
 	{
 		$motCle = $_GET["motCle"];
-		$requete = 'SELECT *
+		$requete = 'SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
+       				US.code_usager, US.nom, US.prenom, AM.id_article, AM.id_mot_cle, MC.mot_cle
 					FROM articles AR
 					INNER JOIN usagers US
 					ON AR.id_usager = US.id_usager
@@ -25,27 +26,29 @@
 	else if (isset($_GET["utilisateur"]))
 	{
 		$utilisateur = $_GET["utilisateur"];
-		$requete = "SELECT *
+		$requete = "SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
+       				US.code_usager, US.nom, US.prenom, AM.id_article, AM.id_mot_cle, MC.mot_cle
 					FROM articles AR
 					INNER JOIN usagers US
 					ON (AR.id_usager = US.id_usager AND AR.id_usager = $utilisateur) 
-					INNER JOIN articles_mots_cle AM
+					LEFT OUTER JOIN articles_mots_cle AM
 					ON AR.id_article = AM.id_article
-					INNER JOIN mots_cle MC
-					ON  AM.id_mot_cle = MC.id_mot_cle   
-					ORDER BY AM.id_article, AM.id_mot_cle";
+					LEFT OUTER JOIN mots_cle MC
+					ON AM.id_mot_cle = MC.id_mot_cle
+					ORDER BY AR.id_article, AM.id_mot_cle";
 	}
 	else
 	{
-		$requete = "SELECT *
+		$requete = "SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
+       				US.code_usager, US.nom, US.prenom, AM.id_article, AM.id_mot_cle, MC.mot_cle
 					FROM articles AR
 					INNER JOIN usagers US
 					ON AR.id_usager = US.id_usager
-					INNER JOIN articles_mots_cle AM
+					LEFT OUTER JOIN articles_mots_cle AM
 					ON AR.id_article = AM.id_article
-					INNER JOIN mots_cle MC
+					LEFT OUTER JOIN mots_cle MC
 					ON AM.id_mot_cle = MC.id_mot_cle
-					ORDER BY AM.id_article, AM.id_mot_cle";
+					ORDER BY AR.id_article, AM.id_mot_cle";
 	}
 
 	$resultats = mysqli_query($connectBD, $requete);
