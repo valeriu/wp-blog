@@ -82,7 +82,7 @@
 				echo '<p>' . $rangee["contenu"] . '</p>';
 				echo '</div>';
 				echo '<div class="meta">';
-				echo '<span>Posted by :</span> <a href="index.php?utilisateur=' . $rangee["id_usager"] . '">' . $rangee["code_usager"] . '</a> <br>';
+				echo '<span>Posted by :</span> <a href="index.php?utilisateur=' . $rangee["id_usager"] . '">' . $rangee["prenom"]." ".$rangee["nom"]. '</a> <br>';
 				echo '<span>Les mots-clés : </span><a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 			}
 			else
