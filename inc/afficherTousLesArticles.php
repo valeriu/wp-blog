@@ -78,9 +78,7 @@
 					echo '<h1>' . $rangee["titre"] . '</a></h1>';
 				}
 
-				echo '<div class="text">';
-				echo '<p>' . $rangee["contenu"] . '</p>';
-				echo '</div>';
+				echo '<div class="text">' . $rangee["contenu"] . '</div>';
 				echo '<div class="meta">';
 				echo '<span>Posted by :</span> <a href="index.php?utilisateur=' . $rangee["id_usager"] . '">' . $rangee["prenom"]." ".$rangee["nom"]. '</a> <br>';
 				echo '<span>Les mots-clés : </span><a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
