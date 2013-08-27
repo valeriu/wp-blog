@@ -16,6 +16,10 @@
 
 	<div class="add-edit">
 <?php
+	if (isset($_GET["message"])){
+		echo '<div class="message succes">' . $_GET["message"] . '</div>';
+	}
+
 	if (isset($_SESSION["utilisateur"])){
 		if (isset($_GET["article"]))	{
 			include "inc/modifierUnArticle.php";
@@ -25,12 +29,6 @@
 	} else {
 		echo '<div class="message erreur">Accès refusé, seuls les utilisateurs enregistrés peuvent ajouter ou modifier des articles</div>';
 	}
-
-	if (isset($_GET["message"])){
-		echo '<div class="message succes">' . $_GET["message"] . '</div>';
-	}
-
-	
 ?>
 	</div>
 
