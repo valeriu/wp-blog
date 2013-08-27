@@ -54,7 +54,7 @@
 		echo '<input hidden type="text" name="motsCleAvantMAJ" value="' . $motsCle . '">';
 		echo '<input type="submit" value="Sauvegarder">';
 		echo '</fieldset>';
-		echo '</form>';
+		echo '<div class="clear"></div></form>';
 	}
 	else
 	{

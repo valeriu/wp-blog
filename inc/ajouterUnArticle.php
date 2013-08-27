@@ -1,17 +1,15 @@
-<?php
-	echo "<h1>Ajouter</h1>";
-	echo "<form action='inc/insertArticle.php' method='POST'";
-	echo '<fieldset>';
-	echo '<label for="titre">Titre</label>';
-	echo '<input type="text" name="titre" value="" id="titre">';
-	echo '<label for="texte">Texte de l\'article</label>';
-	echo '<textarea name="texte" id="texte" rows="10"></textarea>';
-	echo '<label for="auteur">Auteur</label>';
-	echo '<input type="text" name="auteur" value="' . $_GET["code_usager"] . '" id="auteur" disabled="disabled">';
-	echo '<input hidden type="text" name="utilisateur" value="' . $_SESSION["utilisateur"] . '" id="utilisateur">';
-	echo '<label for="motscle">Mots clés</label>';
-	echo '<input type="text" name="motscle" value="" id="motscle">';
-	echo '<input type="submit" value="Sauvegarder">';
-	echo '</fieldset>';
-	echo '</form>';
-?>
+	<h1>Ajouter</h1>
+	<form action='inc/insertArticle.php' method='POST'
+	<fieldset>
+	<label for="titre">Titre</label>
+	<input type="text" name="titre" value="" id="titre">
+	<label for="texte">Texte de l	'article</label>
+	<textarea name="texte" id="texte" rows="10"></textarea>
+	<label for="auteur">Auteur</label>
+	<input type="text" name="auteur" value="<?php echo $_GET["code_usager"]; ?>" id="auteur" disabled="disabled">
+	<input hidden type="text" name="utilisateur" value="<?php echo $_SESSION["utilisateur"]; ?>" id="utilisateur">
+	<label for="motscle">Mots clés</label>
+	<input type="text" name="motscle" value="" id="motscle">
+	<input type="submit" value="Sauvegarder">
+	</fieldset>
+	<div class="clear"></div></form>

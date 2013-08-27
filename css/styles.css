@@ -29,6 +29,9 @@ label {
 fieldset {
 	border:1px solid #eee;
 }
+.add-edit {
+	margin-bottom: 30px;
+}
 .add-edit input[type='text'], textarea {
 	width: 100%;
 	margin-bottom: 20px;
