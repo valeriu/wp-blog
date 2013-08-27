@@ -16,7 +16,14 @@
 
 	<div class="add-edit">
 <?php
-	include "inc/afficherUnArticle.php";
+	if (isset($_GET["article"]))
+	{
+		include "inc/modifierUnArticle.php";
+	}
+	else
+	{
+		include "inc/ajouterUnArticle.php";
+	}
 ?>
 	</div>
 

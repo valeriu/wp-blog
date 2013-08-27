@@ -71,7 +71,7 @@
 
 				if (isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"] == $rangee["id_usager"])
 				{
-					echo '<h1><a href="add_edit.php?article=' . $rangee["id_article"] . '" class="edit">[edit]</a> <a href="post.php">' . $rangee["titre"] . '</a></h1>';
+					echo '<h1><a class="edit" href="add_edit.php?article=' . $rangee["id_article"] . '">[edit]</a> ' . $rangee["titre"] . '</h1>';
 				}
 				else
 				{

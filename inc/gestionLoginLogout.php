@@ -9,6 +9,7 @@
 		unset($_SESSION["msg_erreur_side_bar"]);
 		unset($_SESSION["msg_erreur"]);
 		unset($_SESSION["PrenomNom"]);
+		unset($_SESSION["code_usager"]);
 
 		//détruire la session de l'usager 
 		session_destroy();
@@ -32,6 +33,7 @@
 			{
 				$_SESSION["utilisateur"] = $rangee["id_usager"];
 				$_SESSION["PrenomNom"] = $rangee["prenom"] . " " . $rangee["nom"];
+				$_SESSION["code_usager"] = $rangee["code_usager"];
 			}
 			else
 			{

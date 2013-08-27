@@ -8,7 +8,7 @@
 	{
 		echo '<h3>Salut, ' . $_SESSION["PrenomNom"] . '</h3>';
 		echo '<ul class="submenu">';
-		echo '<li><a href="add_edit.php">Ajouter billet de blog</a></li>';
+		echo '<li><a href="add_edit.php?code_usager=' . $_SESSION["code_usager"] . '">Ajouter billet de blog</a></li>';
 		echo '<li><a href="index.php">Voir les billets de blog</a></li>';
 		echo '<li><a href="inc/gestionLoginLogout.php?logout=true">Déconnexion</a></li>';
 		echo '</ul>';

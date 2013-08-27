@@ -37,7 +37,7 @@
 						echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
 					}
 					echo "<h1>Modifier</h1>";
-					echo "<form action='inc/modifierArticle.php' method='POST'";
+					echo "<form action='inc/updateArticle.php' method='POST'";
 					echo '<fieldset>';
 					echo '<input hidden type="text" name="id_article" value="' . $rangee["id_article"] . '">';
 					echo '<label for="titre">Titre</label>';
