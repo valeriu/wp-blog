@@ -21,7 +21,7 @@
 					 INNER JOIN mots_cle MC
 					 ON  AM.id_mot_cle = MC.id_mot_cle
 					 WHERE MC.id_mot_cle = "' . $motCle . '")
-					ORDER BY AM.id_article, AM.id_mot_cle';
+					ORDER BY AM.id_article DESC';
 	}
 	else if (isset($_GET["utilisateur"]))
 	{
@@ -35,7 +35,7 @@
 					ON AR.id_article = AM.id_article
 					LEFT OUTER JOIN mots_cle MC
 					ON AM.id_mot_cle = MC.id_mot_cle
-					ORDER BY AR.id_article, AM.id_mot_cle";
+					ORDER BY AR.id_article DESC";
 	}
 	else
 	{
@@ -48,7 +48,7 @@
 					ON AR.id_article = AM.id_article
 					LEFT OUTER JOIN mots_cle MC
 					ON AM.id_mot_cle = MC.id_mot_cle
-					ORDER BY AR.id_article, AM.id_mot_cle";
+					ORDER BY AR.id_article DESC";
 	}
 
 	$resultats = mysqli_query($connectBD, $requete);
