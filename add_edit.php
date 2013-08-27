@@ -19,6 +19,9 @@
 	if (isset($_GET["message"])){
 		echo '<div class="message succes">' . $_GET["message"] . '</div>';
 	}
+	if (isset($_GET["messageerr"])){
+		echo '<div class="message erreur">' . $_GET["messageerr"] . '</div>';
+	}
 
 	if (isset($_SESSION["utilisateur"])){
 		if (isset($_GET["article"]))	{
