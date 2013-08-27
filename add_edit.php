@@ -16,6 +16,11 @@
 
 	<div class="add-edit">
 <?php
+	if (isset($_GET["message"]))
+	{
+		echo '<div class="message succes">' . $_GET["message"] . '</div>';
+	}
+
 	if (isset($_GET["article"]))
 	{
 		include "inc/modifierUnArticle.php";

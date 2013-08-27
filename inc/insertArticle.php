@@ -56,5 +56,5 @@
 		}
 	}
 
-	header('Location: ../index.php');
+	header('Location: ../add_edit.php?message=Article a été bien ajouté');
 ?>
