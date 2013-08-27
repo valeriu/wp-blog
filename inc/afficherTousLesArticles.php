@@ -87,7 +87,7 @@
 			}
 			else
 			{
-				echo '&<a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
+				echo ', <a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 			}
 		}
 
