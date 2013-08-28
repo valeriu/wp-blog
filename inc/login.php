@@ -21,7 +21,7 @@
 		echo '<label for="utilisateur">Utilisateur</label>';
 		echo '<input type="text" name="utilisateur" id="utilisateur">';
 		echo '<label for="motpasse">Mot de passe</label>';
-		echo '<input type="text" name="motpasse" id="motpasse">';
+		echo '<input type="password" name="motpasse" id="motpasse">';
 		echo '<input type="submit" value="S\'identifier">';
 		echo '</fieldset>';
 		echo '</form>';

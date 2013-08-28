@@ -21,7 +21,7 @@
 					 INNER JOIN mots_cle MC
 					 ON  AM.id_mot_cle = MC.id_mot_cle
 					 WHERE MC.id_mot_cle = "' . $motCle . '")
-					ORDER BY AM.id_article, AM.id_mot_cle';
+					ORDER BY AM.id_article DESC';
 	}
 	else if (isset($_GET["utilisateur"]))
 	{
@@ -35,7 +35,7 @@
 					ON AR.id_article = AM.id_article
 					LEFT OUTER JOIN mots_cle MC
 					ON AM.id_mot_cle = MC.id_mot_cle
-					ORDER BY AR.id_article, AM.id_mot_cle";
+					ORDER BY AR.id_article DESC";
 	}
 	else
 	{
@@ -48,7 +48,7 @@
 					ON AR.id_article = AM.id_article
 					LEFT OUTER JOIN mots_cle MC
 					ON AM.id_mot_cle = MC.id_mot_cle
-					ORDER BY AR.id_article, AM.id_mot_cle";
+					ORDER BY AR.id_article DESC";
 	}
 
 	$resultats = mysqli_query($connectBD, $requete);
@@ -78,16 +78,14 @@
 					echo '<h1>' . $rangee["titre"] . '</a></h1>';
 				}
 
-				echo '<div class="text">';
-				echo '<p>' . $rangee["contenu"] . '</p>';
-				echo '</div>';
+				echo '<div class="text">' . $rangee["contenu"] . '</div>';
 				echo '<div class="meta">';
-				echo '<span>Posted by :</span> <a href="index.php?utilisateur=' . $rangee["id_usager"] . '">' . $rangee["code_usager"] . '</a> <br>';
+				echo '<span>Posted by :</span> <a href="index.php?utilisateur=' . $rangee["id_usager"] . '">' . $rangee["prenom"]." ".$rangee["nom"]. '</a> <br>';
 				echo '<span>Les mots-clés : </span><a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 			}
 			else
 			{
-				echo '&<a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
+				echo ', <a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a>';
 			}
 		}
 

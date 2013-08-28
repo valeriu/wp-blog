@@ -114,5 +114,5 @@
 		$_SESSION["msg_erreur"] = "Erreur de requête SQL";
 	}
 
-	header('Location: ../index.php');
+	header('Location: ../add_edit.php?message=Article a été bien modifié');
 ?>

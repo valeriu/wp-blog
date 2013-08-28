@@ -16,13 +16,21 @@
 
 	<div class="add-edit">
 <?php
-	if (isset($_GET["article"]))
-	{
-		include "inc/modifierUnArticle.php";
+	if (isset($_GET["message"])){
+		echo '<div class="message succes">' . $_GET["message"] . '</div>';
 	}
-	else
-	{
-		include "inc/ajouterUnArticle.php";
+	if (isset($_GET["messageerr"])){
+		echo '<div class="message erreur">' . $_GET["messageerr"] . '</div>';
+	}
+
+	if (isset($_SESSION["utilisateur"])){
+		if (isset($_GET["article"]))	{
+			include "inc/modifierUnArticle.php";
+		}	else	{
+			include "inc/ajouterUnArticle.php";
+		}
+	} else {
+		echo '<div class="message erreur">Accès refusé, seuls les utilisateurs enregistrés peuvent ajouter ou modifier des articles</div>';
 	}
 ?>
 	</div>

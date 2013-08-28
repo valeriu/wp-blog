@@ -45,7 +45,7 @@
 					echo '<label for="texte">Texte de l\'article</label>';
 					echo '<textarea name="texte" id="texte" rows="10">' . $rangee["contenu"] . '</textarea>';
 					echo '<label for="auteur">Auteur</label>';
-					echo '<input type="text" name="auteur" value="' . $rangee["code_usager"] . '" id="auteur" disabled="disabled">';
+					echo '<input type="text" name="auteur" value="' . $rangee["prenom"]." ".$rangee["nom"] . '" id="auteur" disabled="disabled">';
 					echo '<label for="motscle">Mots clés</label>';
 					$motsCle = $rangee["mot_cle"];
 				}
@@ -54,7 +54,7 @@
 		echo '<input hidden type="text" name="motsCleAvantMAJ" value="' . $motsCle . '">';
 		echo '<input type="submit" value="Sauvegarder">';
 		echo '</fieldset>';
-		echo '</form>';
+		echo '<div class="clear"></div></form>';
 	}
 	else
 	{

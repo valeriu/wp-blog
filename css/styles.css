@@ -18,7 +18,7 @@ label {
 	display:block;
 }
 
-.connecter input[type='text']  {
+.connecter input[type='text'], .connecter input[type='password'] {
 	width: 98%;
 }
 .connecter input[type='submit'] {
@@ -28,6 +28,9 @@ label {
 
 fieldset {
 	border:1px solid #eee;
+}
+.add-edit {
+	margin-bottom: 30px;
 }
 .add-edit input[type='text'], textarea {
 	width: 100%;
@@ -199,20 +202,11 @@ ul.submenu {
 	text-align:center;
 }
 
-/*
-.comment_odd {
-	background-color:#f6f6f6;
-	padding:10px;
-	border-top:1px solid #fff;
-	border-bottom:1px solid #eee;
+.post .text img {
+	float: left;
+	margin:10px 10px 0 0;
+	clear: both;
 }
-.comment_even {
-	padding:10px;
-	background-color:#fcfcfc;
-	border-top:1px solid #fff;
-	border-bottom:1px solid #eee;
-}
-*/
 .message {
 	border: 1px solid #eee;
 	margin: 10px 0px;
