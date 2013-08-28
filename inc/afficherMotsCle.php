@@ -18,7 +18,6 @@
 	{
 		while($rangee = mysqli_fetch_assoc($resultats))
 		{
-			if ($rangee["nombre"] >0)
 			echo '<li>(' . $rangee["nombre"] . ') <a href="index.php?motCle=' . $rangee["id_mot_cle"] . '">' . $rangee["mot_cle"] . '</a></li>';
 		}
 	}
