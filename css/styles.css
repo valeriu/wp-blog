@@ -205,7 +205,6 @@ ul.submenu {
 .post .text img {
 	float: left;
 	margin:10px 10px 0 0;
-	clear: both;
 }
 .message {
 	border: 1px solid #eee;
