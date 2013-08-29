@@ -18,18 +18,21 @@
 
 	$resultats = mysqli_query($connectBD, $requete);
 
+
 	if ($resultats)
 	{
 		$motsCle = "";
 		$nbMots = 0;
+		$motsCleInput = false;
 
 		while($rangee = mysqli_fetch_assoc($resultats))
 		{
+			
+
 			if ($rangee["code_usager"] != $_SESSION["code_usager"])  {
 				 echo '<div class="message erreur">Seul lusager ayant ecrit un article peut modifier celui-ci!</div>';
 				 echo '<div class="clear"></div>';
 				 exit();
-				
 			} 
 				++$nbMots;
 				if ($nbMots > 1) {
@@ -52,19 +55,24 @@
 					echo '<input type="text" name="auteur" value="' . $rangee["prenom"]." ".$rangee["nom"] . '" id="auteur" disabled="disabled">';
 					echo '<label for="motscle">Mots clés</label>';
 					$motsCle = $rangee["mot_cle"];
+					$motsCleInput = true;
 				}
 		
 		}
-		echo '<input type="text" name="motscle" value="' . $motsCle . '" id="motscle">';
-		echo '<input hidden type="text" name="motsCleAvantMAJ" value="' . $motsCle . '">';
-		echo '<input type="submit" value="Sauvegarder">';
-		echo '</fieldset>';
-		echo '<div class="clear"></div></form>';
-		
+		if ($motsCleInput)	{ 	
+			echo '<input type="text" name="motscle" value="' . $motsCle . '" id="motscle">';
+			echo '<input hidden type="text" name="motsCleAvantMAJ" value="' . $motsCle . '">';
+			echo '<input type="submit" value="Sauvegarder">';
+			echo '</fieldset>';
+			echo '<div class="clear"></div></form>';
+		} else {
+			echo '<div class="message erreur">Article ID néxist pas!</div>';
+		}
 	}
 	else
 	{
 		$_SESSION["msg_erreur"] = "Erreur de requête SQL";
 		echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
+
 	}
 ?>
