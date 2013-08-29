@@ -6,3 +6,12 @@ Travail d’équipe : deux étudiants
 	Valeriu Tihai 
 	
 Blog multi-usagers avec mots-clés
+
+Utilisateur  : guillaume
+Mot de passe : guillaume
+
+Utilisateur  : valeriu
+Mot de passe : valeriu
+
+Utilisateur  : louis
+Mot de passe : louis

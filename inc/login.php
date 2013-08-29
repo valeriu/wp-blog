@@ -28,6 +28,7 @@
 		echo '<input type="submit" value="S\'identifier">';
 		echo '</fieldset>';
 		echo '</form>';
+		echo "<br /><br /><br /><p>Voir le fichier <a href=README.md>README</a> pour utilisateur et mot de passe</p>";
 	}
 ?>
 </div> <!-- /sidebar-->
