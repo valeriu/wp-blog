@@ -20,9 +20,9 @@
 	{
 		//cegep
 		$hostBD = "localhost";
-		$nameBD = "directory";
-		$userBD = "root";
-		$passBD = "";
+		$nameBD = "e1296026";
+		$userBD = "e1296026";
+		$passBD = "********";
 	}
 	
 	$connectBD = mysqli_connect($hostBD,$userBD,$passBD,$nameBD);
