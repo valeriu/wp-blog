@@ -22,22 +22,26 @@
 	{
 		$motsCle = "";
 		$nbMots = 0;
+
 		while($rangee = mysqli_fetch_assoc($resultats))
 		{
+			if ($rangee["code_usager"] != $_SESSION["code_usager"])  {
+				 echo '<div class="message erreur">Seul lusager ayant ecrit un article peut modifier celui-ci!</div>';
+				 echo '<div class="clear"></div>';
+				 exit();
+				
+			} 
 				++$nbMots;
-
-				if ($nbMots > 1)
-				{
+				if ($nbMots > 1) {
 					$motsCle = $motsCle . '&' . $rangee["mot_cle"];
 				}
-				else
-				{
+				else {
 					if (isset($_SESSION["msg_erreur"]))
 					{
 						echo '<div class="message erreur">' . $_SESSION["msg_erreur"] . '</div>';
 					}
 					echo "<h1>Modifier</h1>";
-					echo "<form action='inc/updateArticle.php' method='POST'";
+					echo "<form action='inc/updateArticle.php' method='POST'>";
 					echo '<fieldset>';
 					echo '<input hidden type="text" name="id_article" value="' . $rangee["id_article"] . '">';
 					echo '<label for="titre">Titre</label>';
@@ -49,12 +53,14 @@
 					echo '<label for="motscle">Mots clés</label>';
 					$motsCle = $rangee["mot_cle"];
 				}
+		
 		}
 		echo '<input type="text" name="motscle" value="' . $motsCle . '" id="motscle">';
 		echo '<input hidden type="text" name="motsCleAvantMAJ" value="' . $motsCle . '">';
 		echo '<input type="submit" value="Sauvegarder">';
 		echo '</fieldset>';
 		echo '<div class="clear"></div></form>';
+		
 	}
 	else
 	{
