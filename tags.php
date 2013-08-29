@@ -10,7 +10,6 @@
 <?php 	
 	include "inc/header.php";
 	include "inc/login.php";
-	include "inc/links.php";
 ?>
 <div>
 	<div id="content">
