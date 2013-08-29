@@ -1,4 +1,7 @@
 <?php
+/**
+ * Page modifier un article
+ */
 	include "bd.php";
 
 	unset($_SESSION["msg_erreur"]);

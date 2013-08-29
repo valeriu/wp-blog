@@ -1,4 +1,7 @@
 <?php
+/**
+ * Gestion login et logout, gerer les sessions
+ */
 	include "sessions.php"; 
 	unset($_SESSION["msg_erreur_side_bar"]);
 

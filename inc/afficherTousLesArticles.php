@@ -1,8 +1,14 @@
 <?php
+/**
+ * La page d’affichage des articles affichera les articles dans l’ordre inverse de celui dans lequel
+ * ils ont été insérés. Pour chaque article, on affichera dans l’ordre le titre de l’article, le texte 
+ * de l’article, le nom de l’auteur, et les mots-clés s’y rattachan.
+ */
 	include "bd.php";
 
 	unset($_SESSION["msg_erreur"]);
 
+// Afficherez page, avec tous les articles qui sont liés à un mot clé
 	if (isset($_GET["motCle"]))
 	{
 		$motCle = $_GET["motCle"];
@@ -23,6 +29,7 @@
 					 WHERE MC.id_mot_cle = "' . $motCle . '")
 					ORDER BY AM.id_article DESC';
 	}
+// Afficherez page, avec tous les articles qui sont liés à un auteur
 	else if (isset($_GET["utilisateur"]))
 	{
 		$utilisateur = $_GET["utilisateur"];
@@ -39,6 +46,7 @@
 	}
 	else
 	{
+// Afficherez page, avec tous les articles
 		$requete = "SELECT AR.id_article, AR.titre, AR.contenu, AR.id_usager,
        				US.code_usager, US.nom, US.prenom, AM.id_mot_cle, MC.mot_cle
 					FROM articles AR

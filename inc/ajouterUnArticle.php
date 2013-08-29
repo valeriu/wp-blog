@@ -1,3 +1,4 @@
+<!-- Page ajouter,un article -->
 	<h1>Ajouter</h1>
 	<form action='inc/insertArticle.php' method='POST'
 	<fieldset>

@@ -1,7 +1,7 @@
 <?php
 
 
-// title
+// functon pour afficher le title dinamyque
 function afficher_titre() {
 	$file_name = trim(basename($_SERVER['PHP_SELF'], ".php").PHP_EOL);
 

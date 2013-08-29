@@ -1,4 +1,7 @@
 <?php
+/**
+ * Page pour ajouter un article
+ */
 	include "sessions.php"; 
 	include "bd.php";
 

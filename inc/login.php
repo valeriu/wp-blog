@@ -1,5 +1,8 @@
 <div id="sidebar">
 <?php
+/**
+ * Sidebar, afficher login form ou liens utiles si le utilisateur est connecte 
+ */
 	if (isset($_SESSION["msg_erreur_side_bar"]))
 	{
 		echo '<div class="message erreur">' . $_SESSION["msg_erreur_side_bar"] . '</div>';

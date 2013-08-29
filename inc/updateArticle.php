@@ -1,4 +1,7 @@
 <?php
+/**
+ * Page update un article
+ */
 	include "bd.php";
 
 	$titre = mysqli_real_escape_string($connectBD, $_POST["titre"]); 

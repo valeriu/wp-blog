@@ -1,4 +1,8 @@
 <?php
+/**
+ * Afficher la liste des mots-clés disponibles, triée par ordre de popularité.
+ *
+ */
 	include "bd.php";
 
 	unset($_SESSION["msg_erreur"]);
