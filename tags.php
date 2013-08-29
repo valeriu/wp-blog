@@ -1,4 +1,5 @@
 <?php 	
+//Page d’affichage des articles par mots clés 
 	include "inc/sessions.php";
 	// include "inc/bd.php";
 	include "inc/library.php";
@@ -24,6 +25,7 @@
 ?>
 		<ul>
 <?php 	
+//Afficher la liste des mots-clés disponibles, triée par ordre de popularité
 	include "inc/afficherMotsCle.php";
 ?>
 		</ul>
