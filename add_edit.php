@@ -16,6 +16,8 @@
 
 	<div class="add-edit">
 <?php
+//Afficher les messages 
+
 	if (isset($_GET["message"])){
 		echo '<div class="message succes">' . $_GET["message"] . '</div>';
 	}
@@ -23,6 +25,7 @@
 		echo '<div class="message erreur">' . $_GET["messageerr"] . '</div>';
 	}
 
+//Inclure les fichiers en fonction de la demande
 	if (isset($_SESSION["utilisateur"])){
 		if (isset($_GET["article"]))	{
 			include "inc/modifierUnArticle.php";

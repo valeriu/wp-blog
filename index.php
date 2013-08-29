@@ -14,6 +14,7 @@
 <div>
 	<div id="content">
 <?php
+//Afficher tous les articles
 	include "inc/afficherTousLesArticles.php";
 ?>
 	</div>
