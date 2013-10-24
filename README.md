@@ -1,6 +1,6 @@
 TP2 582-831-MA – Bases de données 2
 =======
-
+<pre>
 Travail d’équipe : deux étudiants
 	Louis Cyr
 	Valeriu Tihai 
@@ -15,3 +15,4 @@ Mot de passe : valeriu
 
 Utilisateur  : louis
 Mot de passe : louis
+</pre>
